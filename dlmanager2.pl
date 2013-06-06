@@ -23,7 +23,7 @@ foreach(@editors)
     }
 }
 
-open(FILE, "<", $file) or die "\n";
+open(FILE, "<", $file) or die "Could not open $file: $!\n";
 @list = <FILE>;
 close(FILE);
 
@@ -31,7 +31,7 @@ foreach( @list )
 {
     $failure = 0;
     
-    $_ =~ s/^http/https/;
+    $_ =~ s/^http:/https:/;
     
     if( getfile( $_ ) == 1 ){
         print RED, qq{FAILED, trying unsecure mode (http)...\n}, RESET;
