@@ -75,7 +75,10 @@ sub getfile
     }
     ( $filename ) = $line =~ m|([^/]+)/?$|;
     $filename =~ s/%20/ /g;
+    $filename =~ s/%5B/[/g;
+    $filename =~ s/%5D/]/g;
     print qq{Getting $filename:};
+    
     if (system("wget -c -q --no-check-certificate $line") == 0)
     {
 	print GREEN, qq{OK\n}, RESET;
