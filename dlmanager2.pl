@@ -1,3 +1,6 @@
+# Copyright 2013 Quentin Gibert.
+# You may use this work without restrictions, as long as this notice is included.
+# The work is provided "as is" without warranty of any kind, neither express nor implied.
 #! /usr/bin/perl
 use warnings;
 use Term::ANSIColor qw(:constants);
